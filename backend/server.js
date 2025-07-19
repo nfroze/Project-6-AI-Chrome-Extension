@@ -32,7 +32,8 @@ app.post('/roast', async function(req, res) {
     
     // Track usage
     roastCount++;
-    console.log(`🔥 Roast #${roastCount} - ~${(roastCount * 0.0006).toFixed(4)} spent`);
+    console.log(`🔥 Roast #${roastCount} - ~$${(roastCount * 0.0006).toFixed(4)} spent`);
+    console.log('📝 Post preview:', postText.substring(0, 100) + '...');
     
     // Call Claude API
     const message = await anthropic.messages.create({
@@ -47,11 +48,13 @@ app.post('/roast', async function(req, res) {
 
 CRITICAL: If your score is 80 or higher, you MUST end the roast with #CertifiedShitPost💩
 
-Return JSON:
+You MUST respond with ONLY valid JSON in this exact format:
 {
-  "score": [0-100 based on how much of a shitpost it is],
-  "tldr": "[savage roast - if score >= 80, MUST end with #CertifiedShitPost💩]"
+  "score": 85,
+  "tldr": "Your savage roast here"
 }
+
+IMPORTANT: The roast must be ONE continuous string with NO line breaks or special characters. Use spaces instead of line breaks.
 
 The post:
 "${postText}"`
@@ -62,16 +65,26 @@ The post:
     // Parse Claude's response
     try {
       const responseText = message.content[0].text;
-      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+      console.log('Claude raw response:', responseText);
+      
+      // Clean the response first
+      const cleanedResponse = responseText
+        .replace(/[\n\r\t]/g, ' ')  // Replace newlines/tabs with spaces
+        .replace(/\s+/g, ' ')       // Collapse multiple spaces
+        .trim();
+      
+      // Find the JSON object
+      const jsonMatch = cleanedResponse.match(/\{[^}]*\}/);
       
       if (jsonMatch) {
         const roastData = JSON.parse(jsonMatch[0]);
         return res.json(roastData);
       } else {
-        throw new Error('Invalid response format');
+        throw new Error('No JSON found in response');
       }
     } catch (parseError) {
       console.error('Parse error:', parseError);
+      console.error('Full response was:', message.content[0].text);
       return res.json({
         score: 75,
         tldr: "This post broke my parser. That's how generic it is."
