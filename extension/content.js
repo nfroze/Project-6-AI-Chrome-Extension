@@ -83,7 +83,7 @@ async function getRoast(postText, resultsDisplay, button) {
   
   try {
     // Send to our backend
-    const response = await fetch('http://localhost:3000/roast', {
+    const response = await fetch('https://project-6-linkedin-shitpost-detecto.vercel.app/roast', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
