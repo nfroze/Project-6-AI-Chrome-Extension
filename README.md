@@ -4,13 +4,19 @@ A Chrome extension that uses AI to roast LinkedIn's corporate buzzword theater.
 
 ## Screenshots
 
-<div align="center">
-  <img src="screenshots/1.png" width="400" alt="1">
-  <img src="screenshots/2.png" width="400" alt="2">
-  <img src="screenshots/3.png" width="400" alt="3">
-  <img src="screenshots/4.png" width="400" alt="4">
-  <img src="screenshots/5.png" width="400" alt="4">
-</div>
+<table>
+  <tr>
+    <td><img src="screenshots/1.png" width="300" alt="Roast Example 1"></td>
+    <td><img src="screenshots/5.png" width="300" alt="Roast Example 5"></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/2.png" width="300" alt="Roast Example 2"></td>
+    <td><img src="screenshots/3.png" width="300" alt="Roast Example 3"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="screenshots/4.png" width="300" alt="Roast Example 4"></td>
+  </tr>
+</table>
 
 ## What It Does
 
