@@ -3,12 +3,58 @@ const processedPosts = new Set();
 
 // Function to extract post text
 function extractPostText(postElement) {
-  // LinkedIn post text is usually in a span with dir="ltr"
-  const textElement = postElement.querySelector('[dir="ltr"]');
+  // LinkedIn's post content is usually in a specific container
+  // Try multiple selectors in order of likelihood
+  
+  // Method 1: Look for the actual post content wrapper
+  let textElement = postElement.querySelector('.feed-shared-text, .feed-shared-update-v2__description');
+  
+  // Method 2: Find all [dir="ltr"] elements and skip the author name
+  if (!textElement) {
+    const allLtrElements = postElement.querySelectorAll('[dir="ltr"]');
+    // Skip the first one or two (usually author name) and find the one with substantial text
+    for (const el of allLtrElements) {
+      if (el.innerText && el.innerText.length > 50) {
+        textElement = el;
+        break;
+      }
+    }
+  }
+  
+  // Method 3: Look for the element containing the most text
+  if (!textElement) {
+    const candidates = postElement.querySelectorAll('span[dir="ltr"], div.break-words');
+    let maxLength = 0;
+    for (const el of candidates) {
+      const text = el.innerText || '';
+      if (text.length > maxLength && !text.includes('Follow')) {
+        maxLength = text.length;
+        textElement = el;
+      }
+    }
+  }
+  
+  // Method 4: Last resort - find any substantial text block
+  if (!textElement) {
+    const allSpans = postElement.querySelectorAll('span');
+    for (const span of allSpans) {
+      const text = span.innerText || '';
+      // Skip author names and UI elements
+      if (text.length > 100 && 
+          !span.classList.contains('app-aware-link') &&
+          !span.classList.contains('t-bold')) {
+        textElement = span;
+        break;
+      }
+    }
+  }
+  
   if (!textElement) return null;
   
-  // Get all text content, preserving some structure
-  return textElement.innerText || textElement.textContent;
+  // Get all text content
+  const text = textElement.innerText || textElement.textContent;
+  console.log('Extracted text preview:', text.substring(0, 100) + '...');
+  return text;
 }
 
 // Function to create the roast button
