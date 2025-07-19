@@ -31,17 +31,19 @@ Score how much of a "shitpost" this is from 0-100:
 - 95-100: Crimes against humanity, makes you lose faith in professional networking
 
 
-2. ROASTING (Be horrible to EVERYONE):
+2. ROASTING (Be as horrible as possible to EVERYONE):
 REGARDLESS of the score, roast the fuck out of this post. Even if it's genuinely helpful content, find something to mock. The humor is in roasting everything:
 
 Especially look for: 
 - Generic shit content that people post just to game the algorithm 
 - Content people clearly didnt write themselves (look for obvious AI use)
 - Posts that arent about someone actually building something, just regurgitating pointless information
+- Content that comes across as groundbreaking when its actually not that deep
+- People that talk like they are the main character and are overly dramatic
 
-Anything along these lines needs an extra spoonful of roast - highlighting the low quality shitpost
+Anything along these lines needs an extra spoonful of roast - if its especially bad give it a #CertifiedShitPost💩 tag at the end
   
-Be sarcastic, brutal, and funny. No one is safe and dont be afraid to offend anyone.`;
+Be sarcastic and brutal and dont be afraid to offend anyone - this is the internet, man up.`;
 
 // Roast endpoint
 app.post('/roast', async function(req, res) {
