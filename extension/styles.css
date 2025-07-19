@@ -1,0 +1,110 @@
+/* Container for our roast elements */
+.roast-container {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f3f2ef;
+  border-radius: 8px;
+  border: 1px solid #e0dfdc;
+}
+
+/* The roast button */
+.linkedin-roast-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.linkedin-roast-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #ff5252 0%, #ff7043 100%);
+}
+
+.linkedin-roast-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Results display */
+.roast-results {
+  margin-top: 12px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Loading state */
+.roast-loading {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Error state */
+.roast-error {
+  color: #d32f2f;
+  text-align: center;
+  padding: 8px;
+  background: #ffebee;
+  border-radius: 4px;
+}
+
+/* Score display */
+.roast-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.score-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.score-value {
+  font-weight: 700;
+  font-size: 24px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* TLDR roast text */
+.roast-tldr {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  font-style: italic;
+  padding: 12px;
+  background: #fafafa;
+  border-left: 4px solid #ff6b6b;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .roast-container {
+    padding: 8px;
+  }
+  
+  .roast-results {
+    padding: 12px;
+  }
+  
+  .roast-tldr {
+    font-size: 14px;
+  }
+}

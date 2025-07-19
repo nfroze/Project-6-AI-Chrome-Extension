@@ -1,0 +1,23 @@
+# Environment variables
+backend/.env
+.env
+
+# Node modules
+backend/node_modules/
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
