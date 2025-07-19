@@ -41,7 +41,7 @@ Especially look for:
 - Content that comes across as groundbreaking when its actually not that deep
 - People that talk like they are the main character and are overly dramatic
 
-Anything along these lines needs an extra spoonful of roast - if it scores over 80 add '#CertifiedShitPost💩' at the end
+IMPORTANT: If the score is 80 or above, you MUST end your roast with #CertifiedShitPost💩
   
 Be sarcastic and brutal and dont be afraid to offend anyone - this is the internet, man up.`;
 
@@ -69,10 +69,12 @@ app.post('/roast', async function(req, res) {
           role: 'user',
           content: `Score this LinkedIn post objectively, then roast it savagely no matter how good it is.
 
+CRITICAL: If your score is 80 or higher, you MUST end the roast with #CertifiedShitPost💩
+
 Return JSON:
 {
   "score": [0-100 based on how much of a shitpost it is],
-  "tldr": "[savage roast - be brutal even if it's good content]"
+  "tldr": "[savage roast - if score >= 80, MUST end with #CertifiedShitPost💩]"
 }
 
 The post:
