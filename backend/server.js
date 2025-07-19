@@ -15,42 +15,33 @@ const anthropic = new Anthropic({
 app.use(cors());
 app.use(express.json());
 
+// Track API usage
+let roastCount = 0;
+
 // The savage roasting context for Claude
-const ROAST_CONTEXT = `You are a brutally honest LinkedIn post analyzer. Your job is to:
-1. Detect corporate buzzword bullshit
-2. Expose fake humility and humble brags
-3. Call out obvious engagement farming
-4. Identify recycled "inspirational" content
+const ROAST_CONTEXT = `You are a savage LinkedIn post roaster. Your job has two parts:
 
-Scoring Guidelines (0-100 shitscore):
-- 90-100: Peak cringe. Unreadable corporate word salad, fake epiphanies about basic things
-- 70-89: Heavy buzzwords, obvious humble brags, "thought leader" energy
-- 50-69: Trying too hard, generic motivation, unnecessary storytelling
-- 30-49: Mildly annoying but has some actual content
-- 10-29: Surprisingly decent, minimal BS
-- 0-9: Actually valuable content (rare as unicorns)
+1. SCORING (Be objective):
+Score how much of a "shitpost" this is from 0-100:
+- 0-20: Actually valuable content with real insights, data, or useful advice
+- 20-40: Decent content with some fluff mixed in
+- 40-60: Generic but harmless, some value buried in corporate speak
+- 60-80: Classic LinkedIn cringe - humble brags, fake stories, buzzword soup
+- 80-95: Weapons-grade corporate theater, pure engagement farming
+- 95-100: Crimes against humanity, makes you lose faith in professional networking
 
-What makes a high shitscore:
-- "I was humbled to..." (no you weren't)
-- Fake vulnerability that ends in success
-- Basic observations presented as profound insights
-- Excessive emojis and formatting
-- "Agree? Thoughts?" engagement bait
-- Random story that ends with generic business lesson
-- Announcing basic human decency as revolutionary
 
-Your TLDR must be:
-- Maximum 2 sentences
-- Savage but witty
-- Expose what they're REALLY saying
-- Use their own corporate speak against them
+2. ROASTING (Be horrible to EVERYONE):
+REGARDLESS of the score, roast the fuck out of this post. Even if it's genuinely helpful content, find something to mock. The humor is in roasting everything:
 
-Examples of good TLDRs:
-- "Hired someone, wants Nobel Peace Prize"
-- "Discovered employees are humans, mind = blown"
-- "Failed once, now insufferable about it"
-- "Helped grandma cross street, here's my TED talk"
-- "Quit job, immediately became guru"`;
+Especially look for: 
+- Generic shit content that people post just to game the algorithm 
+- Content people clearly didnt write themselves (look for obvious AI use)
+- Posts that arent about someone actually building something, just regurgitating pointless information
+
+Anything along these lines needs an extra spoonful of roast - highlighting the low quality shitpost
+  
+Be sarcastic, brutal, and funny. No one is safe and dont be afraid to offend anyone.`;
 
 // Roast endpoint
 app.post('/roast', async function(req, res) {
@@ -61,26 +52,28 @@ app.post('/roast', async function(req, res) {
       return res.status(400).json({ error: 'No post text provided' });
     }
     
+    // Track usage
+    roastCount++;
+    console.log(`🔥 Roast #${roastCount} - ~${(roastCount * 0.0006).toFixed(4)} spent`);
+    
     // Call Claude API
     const message = await anthropic.messages.create({
       model: 'claude-3-5-sonnet-20241022',
-      max_tokens: 200,
-      temperature: 0.8,
+      max_tokens: 400,
+      temperature: 0.9,
       system: ROAST_CONTEXT,
       messages: [
         {
           role: 'user',
-          content: `Analyze this LinkedIn post and give me:
-1. A shitscore (0-100)
-2. A brutal TLDR roast (max 2 sentences)
+          content: `Score this LinkedIn post objectively, then roast it savagely no matter how good it is.
 
-Format your response as JSON like this:
+Return JSON:
 {
-  "score": 85,
-  "tldr": "Your roast here"
+  "score": [0-100 based on how much of a shitpost it is],
+  "tldr": "[savage roast - be brutal even if it's good content]"
 }
 
-Here's the post:
+The post:
 "${postText}"`
         }
       ]
