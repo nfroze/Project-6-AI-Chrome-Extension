@@ -1,6 +1,6 @@
-# LinkedIn Shitpost Detector 💩🔥
+# 💩 Project 6: LinkedIn Shitpost Detector
 
-A Chrome extension that uses AI to roast LinkedIn's corporate buzzword theater.
+A Chrome extension that uses AI to roast LinkedIn posts in one click
 
 ## What It Does
 
@@ -39,10 +39,6 @@ One-click AI analysis of any LinkedIn post:
 
 Using my personal API budget. Once it burns out, the extension dies.
 
-**Cost per roast**: ~$0.0006  
-**Total roasts possible**: ~8,300  
-**Current status**: BURNING
-
 Let's see how fast the internet can kill $5!
 
 ## Privacy
@@ -52,13 +48,8 @@ Let's see how fast the internet can kill $5!
 - No BS
 - [Privacy Policy](./PRIVACY.md)
 
-## Examples
-
-**Input**: "I'm humbled to announce my promotion to Senior VP..."  
-**Output**: Score: 92/100 - "Nothing says humility like broadcasting your promotion to 50,000 strangers. #CertifiedShitPost💩"
-
 ---
 
-**Built by Noah Froze** | [GitHub](https://github.com/nfroze)
+**Built by nfroze** | [GitHub](https://github.com/nfroze)
 
 *Currently seeking opportunities in DevSecOps & Full-Stack Development*
