@@ -21,12 +21,12 @@ One-click AI analysis of any LinkedIn post:
 ## How It Works
 
 1. **Click** the roast button on any LinkedIn post
-2. **Extension** scrapes the post text from the DOM
-3. **POST** request sent to Express backend on Vercel
-4. **Backend** forwards text to Claude API with roast context
-5. **Claude** analyses cringe levels and generates output
-6. **JSON** response with score + TLDR returned to extension
-7. **Display** results overlay on the LinkedIn post
+2. **Extension** grabs the post text from the page
+3. **Sends** it to my server
+4. **Server** asks AI to analyze the post
+5. **AI** scores the cringe and writes a roast
+6. **Results** sent back to your browser
+7. **Display** the roast right on the LinkedIn post
 8. **Celebrate** or cringe at the verdict
 
 All in ~2 seconds. No data stored. Pure stateless roasting.

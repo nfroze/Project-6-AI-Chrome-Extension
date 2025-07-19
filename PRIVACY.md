@@ -2,47 +2,36 @@
 
 **Last Updated: January 2025**
 
-## Overview
-LinkedIn Shitpost Detector is a Chrome extension that generates humorous summaries of LinkedIn posts. We take privacy seriously and collect NO personal data.
+## We Don't Collect Any Data. Period.
 
-## What We Don't Collect
-- ❌ No personal information (names, emails, etc.)
-- ❌ No browsing history
-- ❌ No tracking or analytics
-- ❌ No cookies
-- ❌ No user accounts
-- ❌ No stored data
+- No personal information
+- No browsing history  
+- No tracking or cookies
+- No data storage
+- No accounts needed
 
-## What Happens When You Click "Roast"
-1. The extension reads ONLY the text of that specific LinkedIn post
-2. The text is sent to our server for processing
-3. Our server sends it to Claude AI to generate a roast
-4. The roast is displayed to you
-5. Everything is immediately deleted - nothing is stored
+## How It Works
 
-## Data Usage
-- Post text is used solely to generate the roast
-- Each request is anonymous and isolated
-- We don't know who you are or what posts you're roasting
-- No data is ever sold, shared, or retained
+When you click "Roast":
+1. We read ONLY that specific post's text
+2. Send it to AI for roasting
+3. Show you the result
+4. Delete everything immediately
 
-## Third-Party Services
-- We use Claude AI (Anthropic) to generate roasts
-- Neither we nor Anthropic store your data
-- All processing is temporary
+Each roast is anonymous. We don't know who you are or what you're roasting.
 
-## Permissions Explained
-- **activeTab**: Allows reading post text when you click the button
-- **linkedin.com access**: Allows adding roast buttons to posts
+## Permissions
 
-## Updates
-Any changes to this policy will be posted here.
+- **activeTab**: To read the post when you click
+- **linkedin.com**: To add roast buttons
+
+## Third Parties
+
+We use Claude AI to generate roasts. Neither we nor they store any data.
 
 ## Contact
-Questions or concerns? Open an issue at: https://github.com/nfroze/Project-6-LinkedIn-Shitpost-Detector/issues
 
-## Compliance
-This extension complies with Chrome Web Store policies and GDPR by not collecting any personal data.
+Questions? https://github.com/nfroze/Project-6-LinkedIn-Shitpost-Detector/issues
 
 ---
-*Remember: We roast posts, not people. It's all for entertainment!*
+*We roast posts, not people. Pure entertainment!*
