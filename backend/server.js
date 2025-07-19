@@ -44,17 +44,11 @@ app.post('/roast', async function(req, res) {
       messages: [
         {
           role: 'user',
-          content: `Score this LinkedIn post objectively, then roast it savagely no matter how good it is.
-
-CRITICAL: If your score is 80 or higher, you MUST end the roast with #CertifiedShitPost💩
-
-You MUST respond with ONLY valid JSON in this exact format:
+          content: `Analyze this LinkedIn post and respond with ONLY valid JSON:
 {
-  "score": 85,
-  "tldr": "Your savage roast here"
+  "score": NUMBER,
+  "tldr": "STRING"
 }
-
-IMPORTANT: The roast must be ONE continuous string with NO line breaks or special characters. Use spaces instead of line breaks.
 
 The post:
 "${postText}"`
@@ -67,21 +61,38 @@ The post:
       const responseText = message.content[0].text;
       console.log('Claude raw response:', responseText);
       
-      // Clean the response first
-      const cleanedResponse = responseText
-        .replace(/[\n\r\t]/g, ' ')  // Replace newlines/tabs with spaces
-        .replace(/\s+/g, ' ')       // Collapse multiple spaces
-        .trim();
-      
-      // Find the JSON object
-      const jsonMatch = cleanedResponse.match(/\{[^}]*\}/);
-      
-      if (jsonMatch) {
-        const roastData = JSON.parse(jsonMatch[0]);
+      // Method 1: Try direct JSON parse first
+      try {
+        const roastData = JSON.parse(responseText);
         return res.json(roastData);
-      } else {
-        throw new Error('No JSON found in response');
+      } catch (e) {
+        // Continue to next method
       }
+      
+      // Method 2: Extract JSON with better regex
+      const jsonMatch = responseText.match(/\{[^{}]*"score"\s*:\s*\d+[^{}]*"tldr"\s*:\s*"[^"]*"[^{}]*\}/);
+      if (jsonMatch) {
+        try {
+          const roastData = JSON.parse(jsonMatch[0]);
+          return res.json(roastData);
+        } catch (e) {
+          // Continue to next method
+        }
+      }
+      
+      // Method 3: Manual extraction
+      const scoreMatch = responseText.match(/"score"\s*:\s*(\d+)/);
+      const tldrMatch = responseText.match(/"tldr"\s*:\s*"([^"]*)"/s);
+      
+      if (scoreMatch && tldrMatch) {
+        return res.json({
+          score: parseInt(scoreMatch[1]),
+          tldr: tldrMatch[1].replace(/\n/g, ' ').trim()
+        });
+      }
+      
+      throw new Error('Could not parse response');
+      
     } catch (parseError) {
       console.error('Parse error:', parseError);
       console.error('Full response was:', message.content[0].text);
