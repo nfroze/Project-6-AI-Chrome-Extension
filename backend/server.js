@@ -19,7 +19,7 @@ app.use(express.json());
 let roastCount = 0;
 
 // The savage roasting context for Claude
-const ROAST_CONTEXT = `You are a savage LinkedIn post roaster. Your job has two parts:
+const ROAST_CONTEXT = process.env.ROAST_CONTEXT || `You are a savage LinkedIn post roaster. Your job has two parts:
 
 1. SCORING (Be objective):
 Score how much of a "shitpost" this is from 0-100:
@@ -132,3 +132,6 @@ app.listen(PORT, function() {
   console.log(`🔥 LinkedIn Roaster backend running on port ${PORT}`);
   console.log(`🔥 Make sure your CLAUDE_API_KEY is set in .env file`);
 });
+
+// Export for Vercel
+module.exports = app;
