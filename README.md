@@ -2,28 +2,20 @@
 
 A Chrome extension that uses AI to roast LinkedIn's corporate buzzword theater.
 
-## Screenshots
-
-<table>
-  <tr>
-    <td><img src="screenshots/1.png" width="300" alt="Roast Example 1"></td>
-    <td><img src="screenshots/5.png" width="300" alt="Roast Example 5"></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/2.png" width="300" alt="Roast Example 2"></td>
-    <td><img src="screenshots/3.png" width="300" alt="Roast Example 3"></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><img src="screenshots/4.png" width="300" alt="Roast Example 4"></td>
-  </tr>
-</table>
-
 ## What It Does
 
 One-click AI analysis of any LinkedIn post:
 - **Shitscore™** (0-100): How cringe is it?
 - **Savage TLDR**: What they're really saying
 - **#CertifiedShitPost💩**: Badge for 80+ scores
+
+## Screenshots
+
+![Screenshot 1](screenshots/1.png)
+![Screenshot 2](screenshots/2.png)
+![Screenshot 3](screenshots/3.png)
+![Screenshot 4](screenshots/4.png)
+![Screenshot 5](screenshots/5.png)
 
 ## Installation
 
