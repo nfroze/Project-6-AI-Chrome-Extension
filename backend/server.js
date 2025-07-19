@@ -41,7 +41,7 @@ Especially look for:
 - Content that comes across as groundbreaking when its actually not that deep
 - People that talk like they are the main character and are overly dramatic
 
-Anything along these lines needs an extra spoonful of roast - if its especially bad give it a #CertifiedShitPost💩 tag at the end
+Anything along these lines needs an extra spoonful of roast - if it scores over 80 add '#CertifiedShitPost💩' at the end
   
 Be sarcastic and brutal and dont be afraid to offend anyone - this is the internet, man up.`;
 
