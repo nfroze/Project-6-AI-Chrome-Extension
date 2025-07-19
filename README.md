@@ -18,6 +18,19 @@ One-click AI analysis of any LinkedIn post:
   <img src="screenshots/4.png" width="400" alt="Certified Shitpost">
 </div>
 
+## How It Works
+
+1. **Click** the roast button on any LinkedIn post
+2. **Extension** scrapes the post text from the DOM
+3. **POST** request sent to Express backend on Vercel
+4. **Backend** forwards text to Claude API with roast context
+5. **Claude** analyses cringe levels and generates output
+6. **JSON** response with score + TLDR returned to extension
+7. **Display** results overlay on the LinkedIn post
+8. **Celebrate** or cringe at the verdict
+
+All in ~2 seconds. No data stored. Pure stateless roasting.
+
 ## Installation
 
 **Chrome Web Store**: [Pending Approval]
