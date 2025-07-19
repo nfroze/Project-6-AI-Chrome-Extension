@@ -4,12 +4,10 @@
   "version": "1.0",
   "description": "Brutally honest TLDR roasts for LinkedIn posts",
   "permissions": [
-    "activeTab",
-    "storage"
+    "activeTab"
   ],
   "host_permissions": [
-    "https://www.linkedin.com/*",
-    "http://localhost:3000/*"
+    "https://www.linkedin.com/*"
   ],
   "content_scripts": [
     {
