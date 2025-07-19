@@ -11,11 +11,12 @@ One-click AI analysis of any LinkedIn post:
 
 ## Screenshots
 
-![Screenshot 1](screenshots/1.png)
-![Screenshot 2](screenshots/2.png)
-![Screenshot 3](screenshots/3.png)
-![Screenshot 4](screenshots/4.png)
-![Screenshot 5](screenshots/5.png)
+<div align="center">
+  <img src="screenshots/1.png" width="400" alt="Roast Button">
+  <img src="screenshots/2.png" width="400" alt="Roast Result">
+  <img src="screenshots/3.png" width="400" alt="High Score">
+  <img src="screenshots/4.png" width="400" alt="Certified Shitpost">
+</div>
 
 ## Installation
 
