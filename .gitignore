@@ -2,6 +2,10 @@
 backend/.env
 .env
 
+# Vercel
+.vercel
+backend/.vercel
+
 # Node modules
 backend/node_modules/
 node_modules/
