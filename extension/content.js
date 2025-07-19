@@ -83,7 +83,7 @@ function addRoastButtons() {
     if (!postId || processedPosts.has(postId)) return;
     
     // Find the actions container (likes, comments, etc.)
-    const actionsContainer = post.querySelector('.social-actions-bar, [data-test-id="social-actions"]');
+    const actionsContainer = post.querySelector('.feed-shared-social-action-bar, .social-actions-bar, [data-test-id="social-actions"]');
     if (!actionsContainer) return;
     
     // Extract post text
