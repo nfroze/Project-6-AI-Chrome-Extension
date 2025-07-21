@@ -57,69 +57,93 @@ function extractPostText(postElement) {
   return text;
 }
 
+// Function to create the TLDR button
+function createTldrButton() {
+  const button = document.createElement('button');
+  button.className = 'linkedin-tldr-btn';
+  button.innerHTML = '🥱 TLDR';
+  button.title = 'Get the actual point of this post';
+  return button;
+}
+
 // Function to create the roast button
 function createRoastButton() {
   const button = document.createElement('button');
   button.className = 'linkedin-roast-btn';
-  button.innerHTML = '🔥 Get TLDR Roast';
+  button.innerHTML = '🔥 Roast';
+  button.title = 'Get a savage roast of this post';
   return button;
 }
 
 // Function to create the results display
 function createResultsDisplay() {
   const display = document.createElement('div');
-  display.className = 'roast-results';
+  display.className = 'analyzer-results';
   display.style.display = 'none';
   return display;
 }
 
-// Function to handle roast request
-async function getRoast(postText, resultsDisplay, button) {
+// Function to handle analysis request
+async function analyzePost(postText, mode, resultsDisplay, button) {
   // Show loading state
   button.disabled = true;
-  button.innerHTML = '🔄 Roasting...';
+  button.innerHTML = mode === 'tldr' ? '🔄 Summarizing...' : '🔄 Roasting...';
   resultsDisplay.style.display = 'block';
-  resultsDisplay.innerHTML = '<div class="roast-loading">Analyzing shitpost levels...</div>';
+  resultsDisplay.innerHTML = `<div class="analyzer-loading">
+    ${mode === 'tldr' ? 'Extracting the actual point...' : 'Analyzing shitpost levels...'}
+  </div>`;
   
   try {
     // Send to our backend
-    const response = await fetch('https://project-6-linkedin-shitpost-detecto.vercel.app/roast', {
+    const response = await fetch('https://project-6-linkedin-shitpost-detecto.vercel.app/analyze', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ postText })
+      body: JSON.stringify({ postText, mode })
     });
     
     if (!response.ok) {
-      throw new Error('Failed to get roast');
+      throw new Error('Failed to analyze');
     }
     
     const data = await response.json();
     
-    // Display results
-    resultsDisplay.innerHTML = `
-      <div class="roast-score">
-        <span class="score-label">Shitscore:</span>
-        <span class="score-value">${data.score}/100</span>
-      </div>
-      <div class="roast-tldr">"${data.tldr}"</div>
-    `;
+    // Display results based on mode
+    if (mode === 'tldr') {
+      resultsDisplay.innerHTML = `
+        <div class="tldr-result">
+          <span class="tldr-label">📌 TLDR:</span>
+          <div class="tldr-text">"${data.tldr}"</div>
+        </div>
+      `;
+    } else {
+      resultsDisplay.innerHTML = `
+        <div class="roast-score">
+          <span class="score-label">Shitscore™:</span>
+          <span class="score-value">${data.score}/100</span>
+          ${data.score >= 80 ? '<span class="certified-shitpost">💩 #CertifiedShitPost</span>' : ''}
+        </div>
+        <div class="roast-text">"${data.roast}"</div>
+      `;
+    }
     
     // Reset button
-    button.innerHTML = '🔥 Roast Again';
+    button.innerHTML = mode === 'tldr' ? '🥱 TLDR' : '🔥 Roast';
     button.disabled = false;
     
   } catch (error) {
-    console.error('Roast error:', error);
-    resultsDisplay.innerHTML = '<div class="roast-error">Failed to roast. Is the backend running?</div>';
-    button.innerHTML = '🔥 Try Again';
+    console.error('Analysis error:', error);
+    resultsDisplay.innerHTML = `<div class="analyzer-error">
+      ${mode === 'tldr' ? 'Failed to summarize.' : 'Failed to roast.'} Is the backend running?
+    </div>`;
+    button.innerHTML = mode === 'tldr' ? '🥱 Try Again' : '🔥 Try Again';
     button.disabled = false;
   }
 }
 
-// Function to add roast button to posts
-function addRoastButtons() {
+// Function to add analyzer buttons to posts
+function addAnalyzerButtons() {
   // Find all LinkedIn posts
   const posts = document.querySelectorAll('[data-id^="urn:li:activity"], [data-urn^="urn:li:activity"]');
   
@@ -136,23 +160,35 @@ function addRoastButtons() {
     const postText = extractPostText(post);
     if (!postText || postText.length < 10) return; // Skip empty posts
     
-    // Create and add our roast button
+    // Create buttons and results display
+    const tldrButton = createTldrButton();
     const roastButton = createRoastButton();
     const resultsDisplay = createResultsDisplay();
     
     // Create container for our elements
-    const roastContainer = document.createElement('div');
-    roastContainer.className = 'roast-container';
-    roastContainer.appendChild(roastButton);
-    roastContainer.appendChild(resultsDisplay);
+    const analyzerContainer = document.createElement('div');
+    analyzerContainer.className = 'analyzer-container';
     
-    // Add click handler
+    // Create button group
+    const buttonGroup = document.createElement('div');
+    buttonGroup.className = 'analyzer-button-group';
+    buttonGroup.appendChild(tldrButton);
+    buttonGroup.appendChild(roastButton);
+    
+    analyzerContainer.appendChild(buttonGroup);
+    analyzerContainer.appendChild(resultsDisplay);
+    
+    // Add click handlers
+    tldrButton.addEventListener('click', () => {
+      analyzePost(postText, 'tldr', resultsDisplay, tldrButton);
+    });
+    
     roastButton.addEventListener('click', () => {
-      getRoast(postText, resultsDisplay, roastButton);
+      analyzePost(postText, 'roast', resultsDisplay, roastButton);
     });
     
     // Insert after the actions bar
-    actionsContainer.parentNode.insertBefore(roastContainer, actionsContainer.nextSibling);
+    actionsContainer.parentNode.insertBefore(analyzerContainer, actionsContainer.nextSibling);
     
     // Mark as processed
     processedPosts.add(postId);
@@ -160,11 +196,11 @@ function addRoastButtons() {
 }
 
 // Run on page load and monitor for new posts
-addRoastButtons();
+addAnalyzerButtons();
 
 // LinkedIn uses dynamic loading, so we need to watch for new posts
 const observer = new MutationObserver(() => {
-  addRoastButtons();
+  addAnalyzerButtons();
 });
 
 // Start observing
@@ -177,5 +213,5 @@ observer.observe(document.body, {
 let scrollTimeout;
 window.addEventListener('scroll', () => {
   clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(addRoastButtons, 500);
+  scrollTimeout = setTimeout(addAnalyzerButtons, 500);
 });

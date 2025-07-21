@@ -1,5 +1,5 @@
-/* Container for our roast elements */
-.roast-container {
+/* Container for our analyzer elements */
+.analyzer-container {
   margin-top: 12px;
   padding: 12px;
   background: #f3f2ef;
@@ -7,10 +7,16 @@
   border: 1px solid #e0dfdc;
 }
 
-/* The roast button */
+/* Button group container */
+.analyzer-button-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Base button styles */
+.linkedin-tldr-btn,
 .linkedin-roast-btn {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
-  color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 20px;
@@ -19,6 +25,25 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+/* TLDR button specific styles */
+.linkedin-tldr-btn {
+  background: linear-gradient(135deg, #42a5f5 0%, #2196f3 100%);
+  color: white;
+}
+
+.linkedin-tldr-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+}
+
+/* Roast button specific styles */
+.linkedin-roast-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  color: white;
 }
 
 .linkedin-roast-btn:hover:not(:disabled) {
@@ -27,22 +52,37 @@
   background: linear-gradient(135deg, #ff5252 0%, #ff7043 100%);
 }
 
+/* Disabled state for both buttons */
+.linkedin-tldr-btn:disabled,
 .linkedin-roast-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+  transform: none;
 }
 
 /* Results display */
-.roast-results {
+.analyzer-results {
   margin-top: 12px;
   padding: 16px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Loading state */
-.roast-loading {
+.analyzer-loading {
   color: #666;
   font-style: italic;
   text-align: center;
@@ -50,7 +90,7 @@
 }
 
 /* Error state */
-.roast-error {
+.analyzer-error {
   color: #d32f2f;
   text-align: center;
   padding: 8px;
@@ -58,13 +98,42 @@
   border-radius: 4px;
 }
 
-/* Score display */
+/* TLDR result styles */
+.tldr-result {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tldr-label {
+  color: #1976d2;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tldr-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  padding: 12px;
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
+
+/* Roast result styles - displays score + roast */
 .roast-score {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   margin-bottom: 12px;
   font-size: 18px;
+  flex-wrap: wrap;
 }
 
 .score-label {
@@ -81,14 +150,29 @@
   background-clip: text;
 }
 
-/* TLDR roast text */
-.roast-tldr {
+.certified-shitpost {
+  background: #ffeb3b;
+  color: #795548;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  animation: bounce 0.5s ease-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Roast text styling */
+.roast-text {
   font-size: 16px;
   line-height: 1.6;
   color: #1a1a1a;
   font-style: italic;
   padding: 16px;
-  background: #fafafa;
+  background: #fff3e0;
   border-left: 4px solid #ff6b6b;
   border-radius: 4px;
   font-weight: 500;
@@ -99,15 +183,55 @@
 
 /* Make it responsive */
 @media (max-width: 768px) {
-  .roast-container {
+  .analyzer-container {
     padding: 8px;
   }
   
-  .roast-results {
+  .analyzer-button-group {
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .linkedin-tldr-btn,
+  .linkedin-roast-btn {
+    flex: 1;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  
+  .analyzer-results {
     padding: 12px;
   }
   
-  .roast-tldr {
+  .tldr-text,
+  .roast-text {
     font-size: 14px;
+  }
+  
+  .score-value {
+    font-size: 20px;
+  }
+}
+
+/* Dark mode support (if LinkedIn ever implements it) */
+@media (prefers-color-scheme: dark) {
+  .analyzer-container {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+  
+  .analyzer-results {
+    background: #2a2a2a;
+    color: #e0e0e0;
+  }
+  
+  .tldr-text {
+    background: #1e3a5f;
+    color: #e0e0e0;
+  }
+  
+  .roast-text {
+    background: #3e2723;
+    color: #e0e0e0;
   }
 }
