@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <style>
     body {
-      width: 300px;
+      width: 320px;
       padding: 16px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
@@ -42,22 +42,63 @@
       font-size: 13px;
     }
     
+    .mode-list {
+      display: flex;
+      gap: 12px;
+      margin: 8px 0;
+    }
+    
+    .mode {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    
+    .mode-tldr {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+    
+    .mode-roast {
+      background: #ffebee;
+      color: #c62828;
+    }
+    
     .emoji {
       font-size: 24px;
+    }
+    
+    strong {
+      display: block;
+      margin-bottom: 4px;
     }
   </style>
 </head>
 <body>
   <h1><span class="emoji">💩</span> LinkedIn Shitpost Detector</h1>
   
-  <p>Ready to expose LinkedIn's corporate word salad!</p>
+  <p>Cut through the corporate BS with AI-powered analysis!</p>
+  
+  <div class="mode-list">
+    <div class="mode mode-tldr">
+      <strong>🥱 TLDR Mode</strong>
+      Extract the actual point buried in 500 words
+    </div>
+    <div class="mode mode-roast">
+      <strong>🔥 ROAST Mode</strong>
+      Get a savage reality check on any post
+    </div>
+  </div>
   
   <div class="instructions">
     <strong>How to use:</strong><br>
     1. Go to LinkedIn<br>
-    2. Find a cringe post<br>
-    3. Click the "🔥 Get TLDR Roast" button<br>
-    4. Enjoy the brutal honesty
+    2. Find any post<br>
+    3. Click "🥱 TLDR" for summary<br>
+    4. Click "🔥 Roast" for entertainment<br>
+    5. Share the best ones!
   </div>
   
   <div class="status">
