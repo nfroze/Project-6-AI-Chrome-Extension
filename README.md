@@ -14,15 +14,15 @@ Two AI-powered features for any LinkedIn post:
 ### 🔥 Roast Mode  
 - **SpamScore™** (0-100): How spammy is this post?
 - **Savage Commentary**: What they're really saying
-- **#CertifiedSpamPost📧**: Badge of dishonor for 80+ scores
+- **#CertifiedSpamPost📧**: Badge of dishonour for 80+ scores
 
 ## Screenshots
 
 <div align="center">
-  <img src="screenshots/1.png" width="400" alt="1">
-  <img src="screenshots/2.png" width="400" alt="2">
-  <img src="screenshots/3.png" width="400" alt="3">
-  <img src="screenshots/4.png" width="400" alt="4">
+  <img src="screenshots/1.png" width="400" alt="TLDR and Roast Buttons">
+  <img src="screenshots/2.png" width="400" alt="TLDR Result">
+  <img src="screenshots/3.png" width="400" alt="Roast Result">
+  <img src="screenshots/4.png" width="400" alt="Certified Spam Post">
 </div>
 
 ## How It Works
@@ -34,7 +34,7 @@ Two AI-powered features for any LinkedIn post:
 3. **Extension** grabs the post text from the page
 4. **Sends** it to my backend server
 5. **Server** asks Claude AI to work its magic
-6. **AI** either summarizes or roasts (with SpamScore™)
+6. **AI** either summarises or roasts (with SpamScore™)
 7. **Results** appear right under the LinkedIn post
 8. **Share** the best roasts with your network
 
