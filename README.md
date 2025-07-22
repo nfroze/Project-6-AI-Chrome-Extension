@@ -12,10 +12,10 @@ One-click AI analysis of any LinkedIn post:
 ## Screenshots
 
 <div align="center">
-  <img src="screenshots/1.png" width="400" alt="Analyze Button">
-  <img src="screenshots/2.png" width="400" alt="Analysis Result">
-  <img src="screenshots/3.png" width="400" alt="High Score">
-  <img src="screenshots/4.png" width="400" alt="Certified Spam Post">
+  <img src="screenshots/1.png" width="400" alt="1">
+  <img src="screenshots/2.png" width="400" alt="2">
+  <img src="screenshots/3.png" width="400" alt="3">
+  <img src="screenshots/4.png" width="400" alt="4">
 </div>
 
 ## How It Works
