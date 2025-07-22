@@ -90,7 +90,7 @@ async function analyzePost(postText, mode, resultsDisplay, button) {
   button.innerHTML = mode === 'tldr' ? '🔄 Summarizing...' : '🔄 Roasting...';
   resultsDisplay.style.display = 'block';
   resultsDisplay.innerHTML = `<div class="analyzer-loading">
-    ${mode === 'tldr' ? 'Extracting the actual point...' : 'Analyzing shitpost levels...'}
+    ${mode === 'tldr' ? 'Extracting the actual point...' : 'Analyzing spam levels...'}
   </div>`;
   
   try {
@@ -120,9 +120,9 @@ async function analyzePost(postText, mode, resultsDisplay, button) {
     } else {
       resultsDisplay.innerHTML = `
         <div class="roast-score">
-          <span class="score-label">Shitscore™:</span>
+          <span class="score-label">SpamScore™:</span>
           <span class="score-value">${data.score}/100</span>
-          ${data.score >= 80 ? '<span class="certified-shitpost">💩 #CertifiedShitPost</span>' : ''}
+          ${data.score >= 80 ? '<span class="certified-spam">📧 #CertifiedSpamPost</span>' : ''}
         </div>
         <div class="roast-text">"${data.roast}"</div>
       `;

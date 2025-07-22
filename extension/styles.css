@@ -16,7 +16,7 @@
 
 /* Base button styles */
 .linkedin-tldr-btn,
-.linkedin-roast-btn {
+.linkedin-analyze-btn {
   border: none;
   padding: 8px 16px;
   border-radius: 20px;
@@ -40,7 +40,7 @@
   background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
 }
 
-/* Roast button specific styles */
+/* Analyze button specific styles */
 .linkedin-roast-btn {
   background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
   color: white;
@@ -150,7 +150,7 @@
   background-clip: text;
 }
 
-.certified-shitpost {
+.certified-spam {
   background: #ffeb3b;
   color: #795548;
   padding: 4px 12px;
