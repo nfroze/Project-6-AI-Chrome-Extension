@@ -1,35 +1,35 @@
 # 🌐 Project 6: Full Stack Chrome Extension with AI Integration
 
-A Chrome extension that uses AI to roast LinkedIn posts in one click
+A Chrome extension that uses AI to analyze LinkedIn posts for spam and quality metrics in one click
 
 ## What It Does
 
 One-click AI analysis of any LinkedIn post:
-- **Shitscore™** (0-100): How cringe is it?
+- **SpamScore™** (0-100): How spammy is it?
 - **Savage TLDR**: What they're really saying
-- **#CertifiedShitPost💩**: Badge for 80+ scores
+- **#CertifiedSpamPost📧**: Badge for 80+ scores
 
 ## Screenshots
 
 <div align="center">
-  <img src="screenshots/1.png" width="400" alt="Roast Button">
-  <img src="screenshots/2.png" width="400" alt="Roast Result">
+  <img src="screenshots/1.png" width="400" alt="Analyze Button">
+  <img src="screenshots/2.png" width="400" alt="Analysis Result">
   <img src="screenshots/3.png" width="400" alt="High Score">
-  <img src="screenshots/4.png" width="400" alt="Certified Shitpost">
+  <img src="screenshots/4.png" width="400" alt="Certified Spam Post">
 </div>
 
 ## How It Works
 
-1. **Click** the roast button on any LinkedIn post
+1. **Click** the analyze button on any LinkedIn post
 2. **Extension** grabs the post text from the page
 3. **Sends** it to my server
 4. **Server** asks AI to analyze the post
-5. **AI** scores the cringe and writes a roast
+5. **AI** scores the spam level and writes an analysis
 6. **Results** sent back to your browser
-7. **Display** the roast right on the LinkedIn post
-8. **Celebrate** or cringe at the verdict
+7. **Display** the analysis right on the LinkedIn post
+8. **Review** the quality assessment
 
-All in ~2 seconds. No data stored. Pure stateless roasting.
+All in ~2 seconds. No data stored. Pure stateless analysis.
 
 ## Installation
 
@@ -39,20 +39,20 @@ All in ~2 seconds. No data stored. Pure stateless roasting.
 1. Download this repo
 2. Chrome → Extensions → Developer mode ON
 3. Load unpacked → Select the `extension` folder
-4. Go roast some LinkedIn posts
+4. Go analyze some LinkedIn posts
 
 ## Tech Stack
 
 - **Frontend**: Vanilla JS Chrome Extension
 - **Backend**: Express.js on Vercel  
 - **AI**: Claude 3.5 Sonnet (Anthropic)
-- **Architecture**: Extension → Vercel → Claude API → Savage roast
+- **Architecture**: Extension → Vercel → Claude API → Quality analysis
 
 ## The $5 Challenge 🔥
 
 Using my personal API budget. Once it burns out, the extension dies.
 
-Let's see how fast the internet can kill $5!
+Let's see how fast the internet can analyze $5 worth of posts!
 
 ## Privacy
 
