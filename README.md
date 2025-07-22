@@ -19,10 +19,11 @@ Two AI-powered features for any LinkedIn post:
 ## Screenshots
 
 <div align="center">
-  <img src="screenshots/1.png" width="400" alt="TLDR and Roast Buttons">
-  <img src="screenshots/2.png" width="400" alt="TLDR Result">
-  <img src="screenshots/3.png" width="400" alt="Roast Result">
-  <img src="screenshots/4.png" width="400" alt="Certified Spam Post">
+  <img src="screenshots/1.png" width="400" alt="1>
+  <img src="screenshots/2.png" width="400" alt="2">
+  <img src="screenshots/3.png" width="400" alt="3">
+  <img src="screenshots/4.png" width="400" alt="4">
+  <img src="screenshots/5.png" width="400" alt="5">
 </div>
 
 ## How It Works
