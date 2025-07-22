@@ -1,6 +1,6 @@
 # 🌐 Project 6: Full Stack Chrome Extension with AI Integration
 
-A Chrome extension that uses AI to analyze LinkedIn posts for spam and quality metrics in one click
+A Chrome extension that uses AI to analyse LinkedIn posts for spam and quality metrics in one click
 
 ## What It Does
 
@@ -20,10 +20,10 @@ One-click AI analysis of any LinkedIn post:
 
 ## How It Works
 
-1. **Click** the analyze button on any LinkedIn post
+1. **Click** the analyse button on any LinkedIn post
 2. **Extension** grabs the post text from the page
 3. **Sends** it to my server
-4. **Server** asks AI to analyze the post
+4. **Server** asks AI to analyse the post
 5. **AI** scores the spam level and writes an analysis
 6. **Results** sent back to your browser
 7. **Display** the analysis right on the LinkedIn post
@@ -39,7 +39,7 @@ All in ~2 seconds. No data stored. Pure stateless analysis.
 1. Download this repo
 2. Chrome → Extensions → Developer mode ON
 3. Load unpacked → Select the `extension` folder
-4. Go analyze some LinkedIn posts
+4. Go analyse some LinkedIn posts
 
 ## Tech Stack
 
@@ -52,7 +52,7 @@ All in ~2 seconds. No data stored. Pure stateless analysis.
 
 Using my personal API budget. Once it burns out, the extension dies.
 
-Let's see how fast the internet can analyze $5 worth of posts!
+Let's see how fast the internet can analyse $5 worth of posts!
 
 ## Privacy
 
