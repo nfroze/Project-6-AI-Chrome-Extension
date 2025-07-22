@@ -16,7 +16,7 @@
 
 /* Base button styles */
 .linkedin-tldr-btn,
-.linkedin-analyze-btn {
+.linkedin-roast-btn {
   border: none;
   padding: 8px 16px;
   border-radius: 20px;
@@ -26,6 +26,10 @@
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   white-space: nowrap;
+  display: inline-block;
+  height: auto;
+  line-height: normal;
+  min-height: 34px;
 }
 
 /* TLDR button specific styles */
@@ -40,7 +44,7 @@
   background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
 }
 
-/* Analyze button specific styles */
+/* Roast button specific styles */
 .linkedin-roast-btn {
   background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
   color: white;
@@ -179,6 +183,18 @@
   max-height: 300px;
   overflow-y: auto;
   white-space: pre-wrap;
+}
+
+/* Force button styling with higher specificity */
+button.linkedin-tldr-btn,
+button.linkedin-roast-btn {
+  padding: 8px 16px !important;
+  min-height: 34px !important;
+  height: auto !important;
+  line-height: normal !important;
+  font-size: 14px !important;
+  display: inline-block !important;
+  overflow: visible !important;
 }
 
 /* Make it responsive */

@@ -70,7 +70,7 @@ function createTldrButton() {
 function createRoastButton() {
   const button = document.createElement('button');
   button.className = 'linkedin-roast-btn';
-  button.innerHTML = '🔥 Roast';
+  button.innerHTML = '🔥 ROAST';
   button.title = 'Get a savage roast of this post';
   return button;
 }
@@ -87,10 +87,10 @@ function createResultsDisplay() {
 async function analyzePost(postText, mode, resultsDisplay, button) {
   // Show loading state
   button.disabled = true;
-  button.innerHTML = mode === 'tldr' ? '🔄 Summarizing...' : '🔄 Roasting...';
+  button.innerHTML = mode === 'tldr' ? '🔄 Summarising...' : '🔄 Roasting...';
   resultsDisplay.style.display = 'block';
   resultsDisplay.innerHTML = `<div class="analyzer-loading">
-    ${mode === 'tldr' ? 'Extracting the actual point...' : 'Analyzing spam levels...'}
+    ${mode === 'tldr' ? 'Extracting the actual point...' : 'Analysing spam levels...'}
   </div>`;
   
   try {
@@ -135,7 +135,7 @@ async function analyzePost(postText, mode, resultsDisplay, button) {
   } catch (error) {
     console.error('Analysis error:', error);
     resultsDisplay.innerHTML = `<div class="analyzer-error">
-      ${mode === 'tldr' ? 'Failed to summarize.' : 'Failed to roast.'} Is the backend running?
+      ${mode === 'tldr' ? 'Failed to summarise.' : 'Failed to roast.'} Is the backend running?
     </div>`;
     button.innerHTML = mode === 'tldr' ? '🥱 Try Again' : '🔥 Try Again';
     button.disabled = false;
