@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Shitpost Detector",
+  "name": "LinkedIn Spam Detector",
   "version": "1.0",
-  "description": "Brutally honest TLDR roasts for LinkedIn posts",
+  "description": "AI-powered TLDR summaries and savage roasts for LinkedIn posts",
   "permissions": [
     "activeTab"
   ],
