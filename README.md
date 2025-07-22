@@ -1,4 +1,4 @@
-# 💩 Project 6: LinkedIn Shitpost Detector
+# 🌐 Project 6: Full Stack Chrome Extension with AI Integration
 
 A Chrome extension that uses AI to roast LinkedIn posts in one click
 
