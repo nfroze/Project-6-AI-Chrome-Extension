@@ -11,7 +11,7 @@ Two AI-powered features for any LinkedIn post:
 - Extracts the actual point buried in 500 words
 - Perfect for those "thought leader" novels
 
-### 🔥 Roast Mode  
+### 🔥 ROAST Mode  
 - **SpamScore™** (0-100): How spammy is this post?
 - **Savage Commentary**: What they're really saying
 - **#CertifiedSpamPost📧**: Badge of dishonour for 80+ scores
@@ -30,7 +30,7 @@ Two AI-powered features for any LinkedIn post:
 1. **Navigate** to any LinkedIn post
 2. **Choose** your weapon:
    - Hit "🥱 TLDR" for a concise summary
-   - Hit "🔥 Roast" for entertainment value
+   - Hit "🔥 ROAST" for entertainment value
 3. **Extension** grabs the post text from the page
 4. **Sends** it to my backend server
 5. **Server** asks Claude AI to work its magic
