@@ -18,23 +18,24 @@ Two AI-powered features for any LinkedIn post:
 
 ## Screenshots
 
-<table>
-  <tr>
-    <td><img src="screenshots/1.png" width="250" alt="1"></td>
-    <td><img src="screenshots/2.png" width="250" alt="2"></td>
-    <td><img src="screenshots/3.png" width="250" alt="3"></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/4.png" width="250" alt="4"></td>
-    <td><img src="screenshots/5.png" width="250" alt="5"></td>
-    <td><img src="screenshots/6.png" width="250" alt="6"></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/7.png" width="250" alt="7"></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+<details>
+<summary>📸 Screenshots</summary>
+<br>
+
+<div align="center">
+  <img src="screenshots/1.png" width="45%" alt="1">
+  <img src="screenshots/2.png" width="45%" alt="2">
+  <br><br>
+  <img src="screenshots/3.png" width="45%" alt="3">
+  <img src="screenshots/4.png" width="45%" alt="4">
+  <br><br>
+  <img src="screenshots/5.png" width="45%" alt="5">
+  <img src="screenshots/6.png" width="45%" alt="6">
+  <br><br>
+  <img src="screenshots/7.png" width="45%" alt="7">
+</div>
+
+</details>
 
 ## How It Works
 
