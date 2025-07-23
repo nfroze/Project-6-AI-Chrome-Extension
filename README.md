@@ -16,9 +16,9 @@ Two AI-powered features for any LinkedIn post:
 - **Savage Commentary**: What they're really saying
 - **#CertifiedSpamPost📧**: Badge of dishonour for 80+ scores
 
-## Screenshots
+## 📸 Screenshots
 
-[📸 Click here](https://github.com/nfroze/Project-6-Full-Stack-Chrome-Extension-with-AI-Integration/tree/main/screenshots)
+[Click here](https://github.com/nfroze/Project-6-Full-Stack-Chrome-Extension-with-AI-Integration/tree/main/screenshots)
 
 
 ## How It Works
