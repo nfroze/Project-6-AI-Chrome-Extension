@@ -24,6 +24,8 @@ Two AI-powered features for any LinkedIn post:
   <img src="screenshots/3.png" width="400" alt="3">
   <img src="screenshots/4.png" width="400" alt="4">
   <img src="screenshots/5.png" width="400" alt="5">
+  <img src="screenshots/6.png" width="400" alt="6">
+  <img src="screenshots/7.png" width="400" alt="7">
 </div>
 
 ## How It Works
