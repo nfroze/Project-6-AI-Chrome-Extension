@@ -21,10 +21,13 @@ Two AI-powered features for any LinkedIn post:
 <div align="center">
   <img src="screenshots/1.png" width="400" alt="1">
   <img src="screenshots/2.png" width="400" alt="2">
+  <br>
   <img src="screenshots/3.png" width="400" alt="3">
   <img src="screenshots/4.png" width="400" alt="4">
+  <br>
   <img src="screenshots/5.png" width="400" alt="5">
   <img src="screenshots/6.png" width="400" alt="6">
+  <br>
   <img src="screenshots/7.png" width="400" alt="7">
 </div>
 
