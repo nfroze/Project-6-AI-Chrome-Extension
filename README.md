@@ -1,4 +1,4 @@
-# 🌐 Project 6: Full Stack Chrome Extension with AI Integration
+# 🌐 Project 6: AI Chrome Extension
 
 A Chrome extension that adds AI-powered TLDR summaries and savage roasts to LinkedIn posts
 
