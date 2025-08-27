@@ -65,7 +65,3 @@ Project-6-Chrome-Extension/
 │   └── server.js
 └── screenshots/
 ```
-
-## Screenshots
-
-Available in repository screenshots folder.
