@@ -1,73 +1,71 @@
-# 🌐 Project 6: AI Chrome Extension
+# Project 6: AI Chrome Extension
 
-A Chrome extension that adds AI-powered TLDR summaries and savage roasts to LinkedIn posts
+## Overview
 
-## What It Does
+Chrome extension that analyses LinkedIn posts using AI. Provides summaries and satirical commentary.
 
-Two AI-powered features for any LinkedIn post:
+## Features
 
-### 🥱 TLDR Mode
-- Cuts through the corporate fluff
-- Extracts the actual point buried in 500 words
-- Perfect for those "thought leader" novels
+### TLDR Mode
+- Summarises LinkedIn posts
+- Extracts key points
+- Reduces lengthy content
 
-### 🔥 ROAST Mode  
-- **SpamScore™** (0-100): How spammy is this post?
-- **Savage Commentary**: What they're really saying
-- **#CertifiedSpamPost📧**: Badge of dishonour for 80+ scores
-
-## 📸 Screenshots
-
-[Click here](https://github.com/nfroze/Project-6-Full-Stack-Chrome-Extension-with-AI-Integration/tree/main/screenshots)
-
+### Roast Mode
+- Generates spam score (0-100)
+- Provides satirical commentary
+- Flags high-scoring posts
 
 ## How It Works
 
-1. **Navigate** to any LinkedIn post
-2. **Choose** your weapon:
-   - Hit "🥱 TLDR" for a concise summary
-   - Hit "🔥 ROAST" for entertainment value
-3. **Extension** grabs the post text from the page
-4. **Sends** it to my backend server
-5. **Server** asks Claude AI to work its magic
-6. **AI** either summarises or roasts (with SpamScore™)
-7. **Results** appear right under the LinkedIn post
-8. **Share** the best roasts with your network
+1. User navigates to LinkedIn post
+2. Clicks extension button (TLDR or Roast)
+3. Extension extracts post text
+4. Sends to backend server
+5. Server queries Claude AI API
+6. Returns summary or commentary
+7. Results display under post
 
-All in ~2 seconds. No data stored. Pure stateless fun.
+Processing time: approximately 2 seconds. No data storage.
 
 ## Installation
 
-**Chrome Web Store**: [Pending Approval]
+Manual installation:
+1. Download repository
+2. Enable Chrome developer mode
+3. Load unpacked extension from `extension` folder
+4. Extension available on LinkedIn
 
-**Manual Install**:
-1. Download this repo
-2. Chrome → Extensions → Developer mode ON
-3. Load unpacked → Select the `extension` folder
-4. Visit LinkedIn and start roasting
+## Technical Stack
 
-## Tech Stack
+- Frontend: JavaScript Chrome Extension
+- Backend: Express.js on Vercel
+- AI: Claude 3.5 Sonnet API
+- Architecture: Extension → Vercel → Claude API
 
-- **Frontend**: Vanilla JS Chrome Extension
-- **Backend**: Express.js on Vercel  
-- **AI**: Claude 3.5 Sonnet (Anthropic)
-- **Architecture**: Extension → Vercel → Claude API → Brutal honesty
+## API Usage
 
-## The $5 Challenge 🔥
-
-Using my personal API budget. Once it burns out, the extension dies.
-
-Let's see how fast the internet can burn through $5 worth of roasts!
+Uses Anthropic API with pay-per-use pricing. Limited by API budget.
 
 ## Privacy
 
-- No data stored
-- No tracking
-- No BS
-- [Privacy Policy](./PRIVACY.md)
+- No data storage
+- No user tracking
+- Stateless operation
 
----
+## Project Structure
 
-**Built by nfroze** | [GitHub](https://github.com/nfroze)
+```
+Project-6-Chrome-Extension/
+├── extension/
+│   ├── manifest.json
+│   ├── content.js
+│   └── popup.html
+├── backend/
+│   └── server.js
+└── screenshots/
+```
 
-*Currently seeking opportunities in DevSecOps & Full-Stack Development*
+## Screenshots
+
+Available in repository screenshots folder.
