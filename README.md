@@ -65,3 +65,7 @@ Project-6-Chrome-Extension/
 │   └── server.js
 └── screenshots/
 ```
+
+## Documentation
+
+- [Privacy Policy](./PRIVACY.md)
