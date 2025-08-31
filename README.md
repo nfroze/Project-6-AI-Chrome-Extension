@@ -9,5 +9,5 @@ JavaScript • Chrome Extension API • Express.js • Vercel • Claude 3.5 Son
 ## Screenshots
 
 - [Extension](screenshots/extension.png)
-- [TDLR](screenshots/tldr.png)
+- [TLDR](screenshots/tldr.png)
 - [Roast](screenshots/roast.png)
