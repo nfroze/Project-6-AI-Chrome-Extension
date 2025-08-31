@@ -5,3 +5,9 @@ Chrome extension for LinkedIn post analysis using Claude AI. Provides TLDR summa
 ## Technologies
 
 JavaScript • Chrome Extension API • Express.js • Vercel • Claude 3.5 Sonnet API • Node.js
+
+## Screenshots
+
+- [Extension](screenshots/extension.png)
+- [TDLR](screenshots/tldr.png)
+- [Roast](screenshots/roast.png)
